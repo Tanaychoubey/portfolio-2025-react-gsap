@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import Ecom from "../assets/ecommerce-project.png"
 import FB from "../assets/facebook-clone-project.png"
 import BlockChain from "../assets/blockchain-explorer-project.png"
-// import ChatApp from "../assets/chat-app-project.png" 
+import ChatApp from "../assets/chat.png" 
 
 gsap.registerPlugin(useGSAP);
 
@@ -39,9 +39,9 @@ const projects = [
     name: "Real-time Chat Application",
     category: "Full Stack",
     description: "A real-time chat application built with Socket.IO and React, featuring instant messaging, user authentication, group chats, and file sharing capabilities. Includes features like typing indicators, read receipts, and message history.",
-    tools: "React.js, Node.js, Socket.IO, MongoDB, Express, JWT, Material-UI",
-    image: 'ChatApp',
-    source_code_link: "https://github.com/Tanaychoubey/chat-app-socket.io",
+    tools: "React.js, Node.js, Socket.IO, PostgreSQL, Express, JWT",
+    image: ChatApp,
+    source_code_link: "https://github.com/Tanaychoubey/chat-app-2025-react-socket-io",
   },
 ];
 
