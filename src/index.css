@@ -96,7 +96,7 @@ body {
   position: relative;
   height: var(--vh);
   margin: auto;
-  margin-top: 1000px; /* Changed from 50px */
+  margin-top: 0; /* Changed from 50px */
   margin-bottom: 0; /* Changed from -100px */
 }
 
