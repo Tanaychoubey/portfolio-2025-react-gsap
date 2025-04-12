@@ -9,6 +9,7 @@ import SocialIcons from "./SocialIcons";
 import WhatIDo from "./WhatIDo";
 import Work from "./Work";
 import setSplitText from "./utils/splitText";
+import "../styles/locomotive-scroll.css";
 
 const TechStack = lazy(() => import("./TechStack"));
 
@@ -35,23 +36,21 @@ const MainContainer = ({ children }: PropsWithChildren) => {
       <Navbar />
       <SocialIcons />
       {isDesktopView && children}
-      <div id="smooth-wrapper">
-        <div id="smooth-content">
-          <div className="container-main">
-            <Landing>{!isDesktopView && children}</Landing>
-            <About />
-            <WhatIDo />
-            <Career />
-            <Work />
-            {isDesktopView && (
-              <Suspense fallback={<div>Loading....</div>}>
-                <TechStack />
-              </Suspense>
-            )}
-            <Contact />
-          </div>
+      <main id="smooth-wrapper">
+        <div id="smooth-content" data-scroll-container>
+          <Landing>{!isDesktopView && children}</Landing>
+          <About />
+          <WhatIDo />
+          <Career />
+          <Work />
+          {isDesktopView && (
+            <Suspense fallback={<div>Loading....</div>}>
+              <TechStack />
+            </Suspense>
+          )}
+          <Contact />
         </div>
-      </div>
+      </main>
     </div>
   );
 };
