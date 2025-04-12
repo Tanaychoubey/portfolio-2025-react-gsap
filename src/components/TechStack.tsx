@@ -129,12 +129,23 @@ const TechStack = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollY = window.scrollY || document.documentElement.scrollTop;
-      const threshold = document
-        .getElementById("work")!
-        .getBoundingClientRect().top;
-      setIsActive(scrollY > threshold);
+      const workSection = document.getElementById("work");
+      const progress = parseFloat(workSection?.getAttribute("data-progress") || "0");
+      
+      // Only activate when work section is fully scrolled (progress = 1)
+      setIsActive(progress >= 0.99);
     };
+
+    // Get the total scroll distance needed (same as in Work component)
+    const translateX = (() => {
+      const box = document.getElementsByClassName("work-box");
+      if (!box.length) return 0;
+      const rectLeft = document.querySelector(".work-container")?.getBoundingClientRect().left || 0;
+      const rect = box[0].getBoundingClientRect();
+      const parentWidth = box[0].parentElement?.getBoundingClientRect().width || 0;
+      const padding = parseInt(window.getComputedStyle(box[0]).padding) / 2;
+      return rect.width * box.length - (rectLeft + parentWidth) + padding;
+    })();
     document.querySelectorAll(".header a").forEach((elem) => {
       const element = elem as HTMLAnchorElement;
       element.addEventListener("click", () => {

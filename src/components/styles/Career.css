@@ -8,8 +8,8 @@
   opacity: 1;
   height: auto;
   margin: auto;
-  margin-bottom: 250px;
-  padding: 120px 0px;
+  margin-bottom: 100px; /* Further reduced from 150px */
+  padding: 50px 0px; /* Further reduced from 80px */
 }
 
 .career-section h2 {
@@ -23,7 +23,7 @@
   -webkit-text-fill-color: transparent;
   color: transparent;
   margin-top: 50px;
-  margin-bottom: 90px;
+  margin-bottom: 60px; /* Reduced from 90px */
 }
 .career-section h2 > span {
   font-family: "Geist", sans-serif;
@@ -38,7 +38,7 @@
 .career-info-box {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 50px;
+  margin-bottom: 30px; /* Reduced from 50px */
 }
 .career-info-box p {
   width: 40%;
@@ -170,7 +170,7 @@
   .career-info-box {
     flex-direction: column;
     gap: 10px;
-    margin-bottom: 70px;
+    margin-bottom: 35px; /* Further reduced from 50px */
   }
   .career-info-in,
   .career-info-box p {
